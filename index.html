@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Random Card Generator</title>
+</head>
+<body class="bg-success">
+
+    <!-- Dealer hand -->
+    <div class="position-absolute end-0">
+        <div class="d-flex flex-row-reverse p-4 pb-2 gap-2 " id="dealer-hand"></div>
+        <div class="">
+            <p class="m-0 me-4 mt-2 text-light text-end visually-hidden" id="animated-turn-dealer">Dealer's turn</p>
+        </div>
+    </div>
+
+    <!-- Middle score and buttons --> 
+    <div class="position-absolute top-50 start-50 translate-middle">
+        <div class="d-flex justify-content-center gap-2 fs-1 d-md-none" >
+            <i class="fa-solid fa-arrow-rotate-left"></i>
+            <i class="fa-solid fa-mobile text-dark"></i> 
+        </div>
+        <p class="m-0 ms-1 mb-2 fs-4 text-light card-score" id="dealer-card-score"></p>
+        <div class="d-flex gap-2">
+            <button type="button" class="btn btn-danger align-content-center flex-grow-1" id="hit-me">Hit-me</button>
+            <button type="button" class="btn btn-dark align-content-center flex-grow-1" id="stand">Stand</button>
+            <div data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Betting is still WIP!" data-bs-trigger="hover" id="bet-wrapper">
+                <button type="button" class="btn btn-light align-content-center flex-grow-1" disabled aria-label="Close" id="bet">Bet</button>
+            </div>
+        </div>
+        <p class="m-0 ms-1 mt-2 fs-4 text-light card-score" id="player-card-score"></p>
+    </div>
+
+    <!-- Player hand -->
+    <div class="position-absolute bottom-0">
+        <p class="m-0 ms-4 mt-2 fs-4 text-light justify-content-center" id="animated-turn-player">Your turn</p>
+        <div class="d-flex flex-row p-4 pt-2 gap-2 justify-content-center player-hand" id="player-hand"></div>
+    </div>
+
+    <!-- Modal You lost! -->
+    <dialog data-modal-loose data-open-modal class="dialog-loose bottom-50 w-50">
+        <div class="d-flex flex-column my-auto justify-content-center align-items-center ">
+            <div class="my-2 fs-3 text-danger">
+                <strong> You lost!</strong>
+            </div> 
+            <div>The house always has the edge in blackjack, and here’s why: Because you act first. If you bust, you lose—even if the dealer busts too. Dealers also play by strict rules, while players choices can lead to mistakes, which tilt the odds in the houses favor. </div>
+            <button type="button" class="btn btn-danger dialog-button mt-3 mb-1" data-close-modal-loose-button> Start again</button>
+        </div>
+    </dialog>
+
+        <!-- Modal You win! -->
+    <dialog data-modal-win data-open-modal class="dialog-win bottom-50 w-50">
+        <div class="d-flex flex-column my-auto justify-content-center align-items-center">
+            <div class="my-2 fs-3  text-success">
+                <strong> You win!</strong>
+            </div> 
+            <div>Congratulations! Beating the odds and winning against the house is no small feat. Remember, in blackjack, smart choices and strategy can help you win—but luck is always a factor too. Enjoy the victory and keep playing smart to tip the odds in your favor!</div>
+            <button type="button" class="btn btn-success dialog-button mt-3 mb-1" data-close-modal-win-button> Start again</button>
+        </div>
+    </dialog>
+
+    <!-- Modal Tie! -->
+    <dialog data-modal-tie data-open-modal class="dialog-tie bottom-50 w-50">
+        <div class="d-flex flex-column my-auto justify-content-center align-items-center ">
+            <div class="my-2 fs-3">
+                <strong> Tie!</strong>
+            </div> 
+            <div>You matched the dealers hand, so your bet is safe. Keep in mind, though, that casinos gain an edge because if you bust, you lose—even if the dealer does too. Ties keep you in the game, but the house still has the advantage. Play smart to tip the odds!</div>
+            <button type="button" class="btn btn-dark dialog-button mt-3 mb-1" data-close-modal-tie-button> Start again</button>
+
+        </div>
+    </dialog>
+
+
+    <!-- JS start -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js"></script>
+    <!-- JS end -->
+</body>
+</html>
