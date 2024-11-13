@@ -21,19 +21,21 @@
 
     <!-- Middle score and buttons --> 
     <div class="position-absolute top-50 start-50 translate-middle">
-        <div class="d-flex justify-content-center gap-2 fs-1 d-md-none" >
-            <i class="fa-solid fa-arrow-rotate-left"></i>
-            <i class="fa-solid fa-mobile text-dark"></i> 
-        </div>
-        <p class="m-0 ms-1 mb-2 fs-4 text-light card-score" id="dealer-card-score"></p>
-        <div class="d-flex gap-2">
-            <button type="button" class="btn btn-danger align-content-center flex-grow-1" id="hit-me">Hit-me</button>
-            <button type="button" class="btn btn-dark align-content-center flex-grow-1" id="stand">Stand</button>
-            <div data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Betting is still WIP!" data-bs-trigger="hover" id="bet-wrapper">
-                <button type="button" class="btn btn-light align-content-center flex-grow-1" disabled aria-label="Close" id="bet">Bet</button>
+        <!-- <div class="d-flex flex-column"> -->
+            <div class="d-flex justify-content-center gap-2 fs-1 d-md-none" >
+                <i class="fa-solid fa-arrow-rotate-left"></i>
+                <i class="fa-solid fa-mobile text-dark"></i>
             </div>
+            <p class="m-0 ms-1 mb-2 fs-4 text-light card-score" id="dealer-card-score"></p>
+            <div class="d-flex gap-2">
+                <button type="button" class="btn btn-danger align-content-center flex-grow-1" id="hit-me">Hit-me</button>
+                <button type="button" class="btn btn-dark align-content-center flex-grow-1" id="stand">Stand</button>
+                <div data-bs-container="body" data-bs-toggle="popover" data-bs-placement="right" data-bs-content="Betting is still WIP!" data-bs-trigger="hover" id="bet-wrapper">
+                    <button type="button" class="btn btn-light align-content-center flex-grow-1" disabled aria-label="Close" id="bet">Bet</button>
+                </div>
+            </div>
+            <p class="m-0 ms-1 mt-2 fs-4 text-light card-score" id="player-card-score"></p>
         </div>
-        <p class="m-0 ms-1 mt-2 fs-4 text-light card-score" id="player-card-score"></p>
     </div>
 
     <!-- Player hand -->

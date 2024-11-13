@@ -213,12 +213,13 @@ span {
     .card-score {
         font-size: 1.2;
     }
+
 }
 
 
 /* Arrow rotation animation */
 .fa-arrow-rotate-left {
-    animation: turn-arrow 0.75s ease infinite;
+    animation: turn-arrow 0.75s ease infinite alternate;
 }
 
 @keyframes turn-arrow {
